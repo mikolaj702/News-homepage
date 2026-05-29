@@ -17,6 +17,7 @@ body {
   font-family: Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
+
   padding: clamp(1.5rem, 2vw, 2rem);
 }
 
@@ -24,7 +25,7 @@ body {
 .header {
   max-width: 69rem;
   margin-inline: auto;
-  margin-block-end: 2rem;
+  margin-block-end: clamp(1.5rem, 2vw, 2rem);
 
   display: flex;
   justify-content: space-between;
@@ -44,13 +45,14 @@ body {
 .nav a {
   text-decoration: none;
   color: var(--gray);
+  transition: color 0.3s ease;
 }
 
 .nav a:hover {
   color: var(--accent);
 }
 
-/* MAIN LAYOUT */
+/* LAYOUT */
 .page {
   max-width: 69rem;
   margin-inline: auto;
@@ -76,7 +78,7 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1;
 }
 
@@ -85,6 +87,7 @@ h1 {
   margin-block-end: 1.5rem;
 }
 
+/* BUTTON */
 button {
   background: var(--accent);
   border: none;
@@ -93,6 +96,7 @@ button {
   color: white;
   font-weight: 700;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 button:hover {
@@ -149,16 +153,21 @@ button:hover {
 }
 
 /* RESPONSIVE */
-@media (min-width: 48rem) {
+@media (max-width: 48rem) {
   .grid {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .hero-content {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .cards {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 }

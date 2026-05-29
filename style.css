@@ -1,3 +1,4 @@
+```css
 :root {
   --bg: #fffdfa;
   --text: #00001a;
@@ -26,7 +27,7 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: clamp(1rem, 2vw, 1.5rem);
   margin-block-end: clamp(1rem, 2vw, 2rem);
 }
 
@@ -37,13 +38,14 @@ body {
 
 .nav {
   display: flex;
-  gap: 2rem;
+  gap: clamp(1rem, 2vw, 2rem);
   flex-wrap: wrap;
 }
 
 .nav a {
   text-decoration: none;
   color: var(--gray);
+  transition: color 0.3s ease;
 }
 
 .nav a:hover {
@@ -60,7 +62,7 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: clamp(1.5rem, 2vw, 2rem);
 }
 
 /* DESKTOP */
@@ -79,7 +81,7 @@ body {
 .hero-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: clamp(1.5rem, 2vw, 2rem);
   margin-block-start: clamp(1rem, 2vw, 1.5rem);
 }
 
@@ -98,6 +100,7 @@ h1 {
 .hero-text p {
   color: var(--gray);
   margin-block-end: clamp(1rem, 2vw, 1.5rem);
+  line-height: 1.7;
 }
 
 /* BUTTON */
@@ -108,7 +111,13 @@ button {
   padding-inline: clamp(1rem, 2vw, 1.5rem);
   color: white;
   font-weight: 700;
+  letter-spacing: 0.1rem;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: var(--text);
 }
 
 /* SIDEBAR */
@@ -120,7 +129,8 @@ button {
 
 .sidebar h2 {
   color: var(--yellow);
-  margin-block-end: 1rem;
+  margin-block-end: clamp(0.75rem, 1.5vw, 1rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 .sidebar article {
@@ -132,15 +142,26 @@ button {
   border-bottom: none;
 }
 
+.sidebar h3 {
+  margin-block-end: clamp(0.5rem, 1vw, 0.75rem);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.sidebar h3:hover {
+  color: var(--yellow);
+}
+
 .sidebar p {
   color: var(--light);
+  line-height: 1.6;
 }
 
 /* CARDS */
 .cards {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: clamp(1.5rem, 2vw, 2rem);
   margin-block-start: clamp(1rem, 2vw, 2rem);
 }
 
@@ -153,7 +174,18 @@ button {
 
 .card {
   display: flex;
-  gap: 1rem;
+  gap: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+.card img {
+  width: 6.25rem;
+  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
 }
 
 .card span {
@@ -162,8 +194,19 @@ button {
   color: var(--light);
 }
 
+.card h3 {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.card h3:hover {
+  color: var(--accent);
+}
+
 .card p {
   color: var(--gray);
+  line-height: 1.6;
 }
 
 /* REDUCED MOTION */
@@ -171,5 +214,7 @@ button {
   * {
     transition: none;
     animation: none;
+    scroll-behavior: auto;
   }
 }
+```

@@ -17,7 +17,6 @@ body {
   font-family: Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-
   padding: clamp(1.5rem, 2vw, 2rem);
 }
 
@@ -33,7 +32,7 @@ body {
 }
 
 .logo {
-  font-size: 3rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
 }
 
@@ -52,7 +51,7 @@ body {
   color: var(--accent);
 }
 
-/* LAYOUT */
+/* MAIN */
 .page {
   max-width: 69rem;
   margin-inline: auto;
@@ -143,7 +142,7 @@ button:hover {
 }
 
 .card span {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
   color: var(--light);
 }
@@ -167,7 +166,15 @@ button:hover {
   }
 
   .nav {
-    gap: 1rem;
     flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+/* ACCESSIBILITY FIX (REDUCED MOTION) */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
+    animation: none;
   }
 }

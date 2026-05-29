@@ -20,14 +20,14 @@ body {
   padding: clamp(1.5rem, 2vw, 2rem);
 }
 
-/* HEADER */
+/* HEADER (mobile-first) */
 .header {
-  max-width: 69rem;
-  margin-inline: auto;
-  margin-block-end: clamp(1rem, 2vw, 2rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block-end: clamp(1rem, 2vw, 2rem);
 }
 
 .logo {
@@ -38,6 +38,7 @@ body {
 .nav {
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .nav a {
@@ -49,16 +50,24 @@ body {
   color: var(--accent);
 }
 
-/* MAIN */
+/* PAGE */
 .page {
   max-width: 69rem;
   margin-inline: auto;
 }
 
+/* MOBILE FIRST GRID */
 .grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
+}
+
+/* DESKTOP */
+@media (min-width: 48rem) {
+  .grid {
+    grid-template-columns: 2fr 1fr;
+  }
 }
 
 /* HERO */
@@ -69,9 +78,16 @@ body {
 
 .hero-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
   margin-block-start: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* DESKTOP HERO */
+@media (min-width: 48rem) {
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 h1 {
@@ -84,7 +100,7 @@ h1 {
   margin-block-end: clamp(1rem, 2vw, 1.5rem);
 }
 
-/* BUTTON (POPRAWKA CLAMP zamiast 1rem) */
+/* BUTTON */
 button {
   background: var(--accent);
   border: none;
@@ -122,11 +138,17 @@ button {
 
 /* CARDS */
 .cards {
-  grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 2rem;
   margin-block-start: clamp(1rem, 2vw, 2rem);
+}
+
+/* DESKTOP CARDS */
+@media (min-width: 48rem) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .card {
@@ -142,29 +164,6 @@ button {
 
 .card p {
   color: var(--gray);
-}
-
-/* RESPONSIVE (poprawione na min-width zgodnie z FM) */
-@media (min-width: 48rem) {
-  .grid {
-    grid-template-columns: 2fr 1fr;
-  }
-}
-
-/* mobile-first */
-@media (max-width: 48rem) {
-  .hero-content {
-    grid-template-columns: 1fr;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .nav {
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
 }
 
 /* REDUCED MOTION */

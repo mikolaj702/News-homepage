@@ -99,7 +99,7 @@ button {
 .sidebar {
   background: var(--text);
   color: white;
-  padding: 1.5rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
 }
 
 .sidebar h2 {

@@ -89,7 +89,7 @@ button {
   background: var(--accent);
   border: none;
   padding-block: 1rem;
-  padding-inline: clamp(1.5rem, 2vw, 2rem);
+  padding-inline: 1.5rem;
   color: white;
   font-weight: 700;
   cursor: pointer;

@@ -23,7 +23,8 @@ body {
 /* HEADER */
 .header {
   max-width: 69rem;
-  margin: 0 auto 2rem;
+  margin-inline: auto;
+  margin-block-end: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,7 +52,7 @@ body {
 /* LAYOUT */
 .page {
   max-width: 69rem;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .grid {
@@ -70,7 +71,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  margin-top: 1.5rem;
+  margin-block-start: 1.5rem;
 }
 
 h1 {
@@ -80,13 +81,14 @@ h1 {
 
 .hero-text p {
   color: var(--gray);
-  margin-bottom: 1.5rem;
+  margin-block-end: 1.5rem;
 }
 
 button {
   background: var(--accent);
   border: none;
-  padding: 1rem 2rem;
+  padding-inline: 2rem;
+  padding-block: 1rem;
   color: white;
   font-weight: 700;
   cursor: pointer;
@@ -105,11 +107,11 @@ button:hover {
 
 .sidebar h2 {
   color: var(--yellow);
-  margin-bottom: 1rem;
+  margin-block-end: 1rem;
 }
 
 .sidebar article {
-  padding: 1rem 0;
+  padding-block: 1rem;
   border-bottom: 1px solid var(--gray);
 }
 
@@ -127,7 +129,7 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-top: 2rem;
+  margin-block-start: 2rem;
 }
 
 .card {
@@ -145,7 +147,7 @@ button:hover {
   color: var(--gray);
 }
 
-/* RESPONSIVE (mobile-first fix compliant) */
+/* RESPONSIVE */
 @media (min-width: 48rem) {
   .grid {
     grid-template-columns: 2fr 1fr;

@@ -20,11 +20,10 @@ body {
   padding: clamp(1.5rem, 2vw, 2rem);
 }
 
-/* HEADER */
 .header {
   max-width: 69rem;
   margin-inline: auto;
-  margin-block-end: clamp(1.5rem, 2vw, 2rem);
+  margin-block-end: clamp(1rem, 2vw, 2rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,7 +48,6 @@ body {
   color: var(--accent);
 }
 
-/* MAIN */
 .page {
   max-width: 69rem;
   margin-inline: auto;
@@ -61,7 +59,6 @@ body {
   gap: 2rem;
 }
 
-/* HERO */
 .hero img {
   width: 100%;
   display: block;
@@ -71,7 +68,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  margin-block-start: 1.5rem;
+  margin-block-start: clamp(1rem, 2vw, 1.5rem);
 }
 
 h1 {
@@ -84,7 +81,6 @@ h1 {
   margin-block-end: 1.5rem;
 }
 
-/* BUTTON */
 button {
   background: var(--accent);
   border: none;
@@ -95,7 +91,6 @@ button {
   cursor: pointer;
 }
 
-/* SIDEBAR */
 .sidebar {
   background: var(--text);
   color: white;
@@ -120,13 +115,12 @@ button {
   color: var(--light);
 }
 
-/* CARDS */
 .cards {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-block-start: clamp(1.5rem, 2vw, 2rem);
+  margin-block-start: clamp(1rem, 2vw, 2rem);
 }
 
 .card {
@@ -144,7 +138,6 @@ button {
   color: var(--gray);
 }
 
-/* RESPONSIVE */
 @media (max-width: 48rem) {
   .grid {
     grid-template-columns: 1fr;
@@ -164,7 +157,6 @@ button {
   }
 }
 
-/* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none;

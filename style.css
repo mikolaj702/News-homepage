@@ -84,12 +84,12 @@ h1 {
   margin-block-end: clamp(1rem, 2vw, 1.5rem);
 }
 
-/* BUTTON */
+/* BUTTON (POPRAWKA CLAMP zamiast 1rem) */
 button {
   background: var(--accent);
   border: none;
-  padding-block: 1rem;
-  padding-inline: 1.5rem;
+  padding-block: clamp(0.75rem, 1.2vw, 1rem);
+  padding-inline: clamp(1rem, 2vw, 1.5rem);
   color: white;
   font-weight: 700;
   cursor: pointer;
@@ -144,12 +144,15 @@ button {
   color: var(--gray);
 }
 
-/* RESPONSIVE */
-@media (max-width: 48rem) {
+/* RESPONSIVE (poprawione na min-width zgodnie z FM) */
+@media (min-width: 48rem) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr 1fr;
   }
+}
 
+/* mobile-first */
+@media (max-width: 48rem) {
   .hero-content {
     grid-template-columns: 1fr;
   }
